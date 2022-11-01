@@ -44,7 +44,7 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
-import AuthrizedElement from './AuthrizedElement';
+import PrivateRoute from './PrivateRoute';
 
 
 
@@ -59,7 +59,7 @@ const routes = [
     key: "dashboard",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
-    component: <Dashboard/>,
+    component: <PrivateRoute><Dashboard/></PrivateRoute>,
     roles :['RealmAdmin']
   },
   {
@@ -78,7 +78,7 @@ const routes = [
     icon: <Icon fontSize="small">receipt_long</Icon>,
     route: "/billing",
     component: <Billing />,
-    roles :['RealmAdminZ']
+    roles :['RealmAdmin']
   },
   {
     type: "collapse",
@@ -120,6 +120,15 @@ const routes = [
     route: "/authentication/sign-up",
     component: <SignUp />,
   },
+  {
+    type: "collapse",
+    name: "Sign Up",
+    key: "sign-up",
+    icon: <Icon fontSize="small">assignment</Icon>,
+    route: "/authentication/sign-up",
+    component: <SignUp />,
+  },
+
 ];
 
 export default routes;

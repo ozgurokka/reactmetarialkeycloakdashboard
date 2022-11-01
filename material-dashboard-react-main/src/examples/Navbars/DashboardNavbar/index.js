@@ -27,6 +27,12 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
+import Chip from '@mui/material/Chip';
+import Avatar from '@mui/material/Avatar';
+import keycloak from "../../../Keycloak";
+import { useKeycloak } from '@react-keycloak/web';
+
+
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -59,6 +65,9 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
+  const keycloak = useKeycloak().keycloak;
+  
+
 
   useEffect(() => {
     // Setting the navbar type

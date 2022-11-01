@@ -24,7 +24,10 @@ import keycloak from "./Keycloak"
 import { MaterialUIControllerProvider } from "context";
 
 ReactDOM.render(
-  <ReactKeycloakProvider authClient={keycloak}>
+  <ReactKeycloakProvider 
+    initOptions={{ onLoad: 'login-required' }}
+    authClient={keycloak}
+  >
     <BrowserRouter>
       <MaterialUIControllerProvider>
         <App />

@@ -34,9 +34,12 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+import { useKeycloak } from "@react-keycloak/web";
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
+  const { keycloak } = useKeycloak();
+  const isLoggedIn = keycloak.authenticated;
 
   return (
     <DashboardLayout>
