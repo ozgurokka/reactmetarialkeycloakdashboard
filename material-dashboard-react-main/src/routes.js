@@ -87,6 +87,8 @@ const routes = [
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/rtl",
     component: <RTL />,
+    roles :['RealmAdmin']
+
   },
   {
     type: "collapse",
@@ -95,6 +97,8 @@ const routes = [
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
     component: <Notifications />,
+    roles :['RealmAdmin']
+
   },
   {
     type: "collapse",
@@ -103,6 +107,8 @@ const routes = [
     icon: <Icon fontSize="small">person</Icon>,
     route: "/profile",
     component: <Profile />,
+    roles :['RealmAdmin']
+
   },
   {
     type: "collapse",
@@ -111,6 +117,8 @@ const routes = [
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
     component: <SignIn />,
+    roles :['RealmAdmin']
+
   },
   {
     type: "collapse",
@@ -119,6 +127,8 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
+    roles :['RealmAdmin']
+
   },
   {
     type: "collapse",
@@ -127,6 +137,8 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/authentication/sign-up",
     component: <SignUp />,
+    roles :['RealmAdmin']
+
   },
 
 ];
