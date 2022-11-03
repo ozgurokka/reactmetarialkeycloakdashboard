@@ -4,7 +4,7 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Okka (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -46,9 +46,6 @@ import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import PrivateRoute from './PrivateRoute';
 
-
-
-
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -64,7 +61,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Tables",
+    name: "Personel",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",

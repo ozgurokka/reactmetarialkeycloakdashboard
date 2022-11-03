@@ -6,7 +6,7 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Okka (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -22,6 +22,8 @@ import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useKeycloak } from "@react-keycloak/web";
+
 
 function createData(userId, name, surname, company) {
   return { userId, name, surname, company};
@@ -31,13 +33,24 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+
 export default function data() {
 
-  const [datax, setData] = useState([]);
+  
+const { keycloak } = useKeycloak();
 
+const token = keycloak.token;
+
+const [datax, setData] = useState([]);
+
+const config = {
+  headers: {
+    'Authorization': `Bearer ${token}`,
+  },
+};
   useEffect(() => {
     axios
-      .get("https://mocki.io/v1/56b0a788-af27-4c88-b9d0-7a62febd75e0")
+      .get("http://localhost:8081/user",config )
       .then((res) => {
         setData(res.data);
         console.log("Result:", datax);
@@ -46,10 +59,6 @@ export default function data() {
         console.log(error);
       });
   }, []);
-
-  
-
-
 
   const Author = ({ image, name, email }) => (
     <MDBox display="flex" alignItems="center" lineHeight={1}>

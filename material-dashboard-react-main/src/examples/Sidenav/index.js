@@ -4,7 +4,7 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Okka (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -90,7 +90,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
     if (type === "collapse") {
       returnValue = href ? (
-        <AuthrizedElement roles={['RealmAdmisn']}><Link
+        <AuthrizedElement roles={roles}><Link
           href={href}
           key={key}
           target="_blank"
