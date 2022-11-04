@@ -23,10 +23,16 @@ import keycloak from "./Keycloak"
 // Material Dashboard 2 React Context Provider
 import { MaterialUIControllerProvider } from "context";
 
+const tokenLogger = (tokens) => {
+  localStorage.setItem('jwttoken', tokens.token);
+}
+
+
 ReactDOM.render(
   <ReactKeycloakProvider 
     initOptions={{ onLoad: 'login-required' }}
     authClient={keycloak}
+    onTokens={tokenLogger}
   >
     <BrowserRouter>
       <MaterialUIControllerProvider>

@@ -36,21 +36,16 @@ import team4 from "assets/images/team-4.jpg";
 
 export default function data() {
 
-  
-const { keycloak } = useKeycloak();
-
-const token = keycloak.token;
-
 const [datax, setData] = useState([]);
 
 const config = {
   headers: {
-    'Authorization': `Bearer ${token}`,
+    'Authorization': `Bearer ${localStorage.getItem('jwttoken')}`,
   },
 };
   useEffect(() => {
     axios
-      .get("http://localhost:8081/user",config )
+      .get("http://localhost:8085/user",config )
       .then((res) => {
         setData(res.data);
         console.log("Result:", datax);

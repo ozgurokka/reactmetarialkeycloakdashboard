@@ -5,7 +5,6 @@ import { Routes } from 'react-router-dom';
 
 export default function AuthrizedElement({ roles, children }){
     const keycloak = useKeycloak().keycloak;
-
     const isAutherized = () => {
         if (keycloak && roles) {
             return roles.some(r => {

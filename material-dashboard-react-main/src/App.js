@@ -54,9 +54,12 @@ import brandWhite from "assets/images/logo-ct.png";
 import brandDark from "assets/images/logo-ct-dark.png";
 
 import AuthrizedElement from './AuthrizedElement';
-
+import { useKeycloak } from "@react-keycloak/web";
 
 export default function App() {
+  const { keycloak } = useKeycloak();
+  const token = keycloak.token;
+  
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
